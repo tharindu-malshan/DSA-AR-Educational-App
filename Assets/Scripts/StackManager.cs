@@ -9,6 +9,8 @@ public class StackManager : MonoBehaviour
     public TMP_Text lessonText;
     public TMP_Text codeText;
     public int maxItems = 5;
+    public Material blueMaterial;
+    public Material greenMaterial;
 
     private Stack<int> stack = new Stack<int>();
     private List<string> operationHistory = new List<string>();
@@ -269,29 +271,36 @@ public class StackManager : MonoBehaviour
 
 
     
+    
     private void UpdateStackColors()
     {
     for (int i = 0; i < blocks.Count; i++)
     {
         GameObject block = blocks[i];
 
+        if (block == null)
+            continue;
+
         Renderer blockRenderer = block.GetComponent<Renderer>();
 
-        if (blockRenderer != null)
+        if (blockRenderer == null)
+            continue;
+
+        if (i == blocks.Count - 1)
         {
-            if (i == blocks.Count - 1)
-            {
-                // TOP cube = Green
-                blockRenderer.material.color = Color.green;
-            }
-            else
-            {
-                // Other cubes = Blue
-                blockRenderer.material.color = Color.blue;
-            }
+            // TOP cube = Green
+            if (greenMaterial != null)
+                blockRenderer.sharedMaterial = greenMaterial;
+        }
+        else
+        {
+            // Other cubes = Blue
+            if (blueMaterial != null)
+                blockRenderer.sharedMaterial = blueMaterial;
         }
     }
     }
+
 
     
 private IEnumerator AnimatePush(

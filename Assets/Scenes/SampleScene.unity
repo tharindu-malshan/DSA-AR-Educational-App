@@ -2468,7 +2468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &436358033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6499,6 +6499,8 @@ MonoBehaviour:
   lessonText: {fileID: 294426179}
   codeText: {fileID: 710415469}
   maxItems: 5
+  blueMaterial: {fileID: 2100000, guid: 1a0e156c7e78d0e47a26642cabf898ca, type: 2}
+  greenMaterial: {fileID: 2100000, guid: fc9bdd1fff8903241ac0df7618a40630, type: 2}
   stackBase: {fileID: 0}
   animationDuration: 0.5
   animationDistance: 0.35
